@@ -1,15 +1,6 @@
 # mc-circle-generator (Minecraft-circle-generator)
 
-### CREDITS
-  
-  Programme créer de zéro par @briec repl.it<br/>
-  code created by @briec from repl.it<br/>
-  (dernière mise à jour : 11/08/2020)<br/>
-  (last update : 08-11-2020)<br/><br/>
-
-  Chaîne youtube - Youtube channel (KiwiHub) :<br/> 
-  https://www.youtube.com/channel/UCMCACsSUCFLLH13q9T5enTA<br/><br/>
-
+### The links (les liens pour le générateur)
 
 Lien pour le générateur de cercles pixelisés : https://kiwihub-br.github.io/mc-circle-generator/<br/>
 Link to the circle generator : https://kiwihub-br.github.io/mc-circle-generator/
@@ -21,3 +12,13 @@ The circle is rendered on the top right corner : <br/>
 
 Some tools are at your disposal to change the shape or to zoom.<br/>
 ![alt text](https://github.com/KiwiHub-br/mc-circle-generator/blob/master/capture_tool_gene.PNG?raw=true)<br/>
+
+### CREDITS
+  
+  Programme créer de zéro par @briec repl.it<br/>
+  code created by @briec from repl.it<br/>
+  (dernière mise à jour : 11/08/2020)<br/>
+  (last update : 08-11-2020)<br/><br/>
+
+  Chaîne youtube - Youtube channel (KiwiHub) :<br/> 
+  https://www.youtube.com/channel/UCMCACsSUCFLLH13q9T5enTA<br/><br/>
