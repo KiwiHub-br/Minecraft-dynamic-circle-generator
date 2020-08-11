@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>JavaScript_circle</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		#canvas {
+			border: dashed red;
+			z-index: 1;
+		}
+    .figure_div{
+      position: absolute;
+      top: 20px;
+			left: 10px;
+    }
+
+		#zoom {
+			border: dashed red;
+			z-index: 30;
+		}
+
+		.zoom_div {
+			position: fixed;
+			top: 0;
+			right: 0;
+      max-width: 205px;
+			z-index: 30;
+      background-color: rgba(49, 174, 31, 0.6);;
+			color: rgba(255, 255, 255, 1);
+			font-family: "Courier New", Courier, monospace;
+			font-weight: bold;
+      font-size: 20px;
+			backdrop-filter: blur(100px);
+		}
+
+		.contenu_slider {
+			position: fixed;
+			max-width: 500px;
+			bottom: 0;
+			right: 0%;
+			font-size: 20px;
+			z-index: 30;
+			background-color: rgba(49, 174, 31, 0.6);
+			color: rgba(255, 255, 255, 1);
+			font-family: "Courier New", Courier, monospace;
+			font-weight: bold;
+			backdrop-filter: blur(100px);
+		}
+
+		.slider {
+			-webkit-appearance: none;
+			width: 80%;
+			height: 15px;
+			border-radius: 5px;
+			background: #d3d3d3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+		}
+
+		.slider:hover {
+			opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+
+		#follower {
+			position: absolute;
+			transform: translate(1%, 1%);
+			width: 50px;
+			height: 50px;
+			background: #fff;
+			border-radius: 0%;
+			pointer-events: none;
+			mix-blend-mode: difference;
+			transition: 0s;
+			z-index: 2;
+		}
+
+    .Credits{
+      position: fixed;
+			bottom: 0;
+			left: 0;
+      padding-left:10px;
+      max-width: 150px;
+			z-index: 10;
+      background-color: rgba(49, 174, 31, 0.6);;
+			color: rgba(255, 255, 255, 1);
+			font-family: "Courier New", Courier, monospace;
+			font-weight: bold;
+      font-size: 12px;
+			backdrop-filter: blur(100px);
+    }
+
+    .info{
+      position: fixed;
+			bottom: 0;
+			left: 151px;
+      padding-left:10px;
+      max-width: 150px;
+			z-index: 10;
+      font-size: 12px;
+    }
+
+      @media only screen and (max-height: 699px) {
+        #Contenu_page { display: none; }
+            .smallscreen_2 { display: block; }
+        }
+        @media only screen and (min-height: 700px) {
+            .smallscreen_2 { display: none; }
+        }
+      @media only screen and (max-width:400px) {
+        #Contenu_page { display: none; }
+            .smallscreen { display: block; }
+        }
+        @media only screen and (min-width:401px) {
+            .smallscreen { display: none; }
+        }
+
+	</style>
+</head>
+
+<body>
+  <p class="smallscreen">Sorry, your screen is too small for this. Please use a bigger screen</p>
+  <p class="smallscreen_2">Sorry, your screen is too small for this. Please use a bigger screen</p>
+  <div id="Contenu_page">
+	<div id="follower"></div>
+  <div class="figure_div">
+	<canvas id="canvas" width="500" height="500">
+		<p>Mettez à jour votre navigateur internet pour bénéficier de la fonctionnalité Canvas.</p>
+	</canvas>
+  </div>
+	<div class="zoom_div">
+		<canvas id="zoom" width="200" height="200" style="background-color: rgba(255, 255, 255, 1);"></canvas>
+        <p>Choix du zoom : <span id="Valeur_Zoom"></span>/50</p>
+    		<input type="range" min="1" max="50" value="10" class="slider" id="RangeZoom" oninput="slider_fun()" >
+        
+	</div>
+	<div class="contenu_slider">
+		<label for="smoothbtn">
+  			<input type="checkbox" name="smoothbtn" id="smoothbtn">
+ 				Netteté de la géométrie : peut impacter les performances de votre appareil(sharpness : may impact the performance of your device) 
+			</label>
+			  <p>Opacité du quadrillage (grid opacity) : <span id="Valeur_OPgrid"></span>/1</p>
+    		<input type="range" min="0" max="1" value="1" step="0.01" class="slider" id="RangeOPgrid" oninput="slider_fun()" >
+        
+    		<p>Rayon de la figure géométrique (radius) : <span id="Valeur_T"></span>/400</p>
+    		<input type="range" min="0" max="400" value="50" step="1" class="slider" id="RangeT" oninput="slider_fun()" >
+        
+        <p>Indice de modification de la base (base) : <span id="Valeur_base"></span>/40</p>
+    		<input type="range" min="-100" max="40" value="0" step="1" class="slider" id="RangeBase" oninput="slider_fun()" >
+
+    		<p>Courbure de la figure géométrique (curvature) : <span id="Valeur_F"></span>/100</p>
+    		<input type="range" min="0" max="100" value="8" class="slider" id="RangeF" oninput="slider_fun(this)">
+        </br>
+        <p></p>
+		</div>
+
+    <div class="Credits">
+      <p>Made by briec. 
+        </br>My youtube channel : 
+       <a href="https://www.youtube.com/channel/UCMCACsSUCFLLH13q9T5enTA"><i class="fab fa-youtube" style="font-size:20px;"> KiwiHub</i></a></p>
+    </div>
+    <div class="info">
+      <button onclick="fun_help()">help</button>
+      <button onClick="window.location.reload();">Reset</button>
+      <button onclick="fun_wht()">?</button>
+    </div>
+    </div>
+
+		<script type="text/javascript" src="javascript_circle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).mousemove(function(e){
+        $('#follower').css({left:e.pageX,top:e.pageY})
+        })
+    </script>
+	</body>
+</html>
