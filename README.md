@@ -14,7 +14,7 @@ Some tools are at your disposal to change the shape or to zoom... (Des outils so
 
 ### CREDITS
   
-  Programme créer de zéro par @briec repl.it<br/>
+  Programme créer par @briec repl.it<br/>
   code created by @briec from repl.it<br/>
   (dernière mise à jour : 11/08/2020)<br/>
   (last update : 08-11-2020)<br/><br/>
