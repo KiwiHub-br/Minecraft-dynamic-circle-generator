@@ -1,5 +1,7 @@
 # Minecraft dynamic circle generator
 
+**Version 1.0.0**
+
 ### The link (le lien pour le générateur)
 
 Minecraft dynamic circle generator : https://kiwihub-br.github.io/Minecraft-dynamic-circle-generator/<br/>
@@ -21,3 +23,7 @@ Some tools are at your disposal to change the shape or to zoom... (Des outils so
 
   Chaîne youtube - Youtube channel (KiwiHub) :<br/> 
   https://www.youtube.com/channel/UCMCACsSUCFLLH13q9T5enTA<br/><br/>
+
+### License & copyright
+
+Licensed under the [MIT Lisence](LICENSE).
