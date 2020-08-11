@@ -1,4 +1,4 @@
-# mc-circle-generator (Minecraft dynamic circle generator)
+# Minecraft dynamic circle generator
 
 ### The links (les liens pour le générateur)
 
