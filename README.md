@@ -1,6 +1,6 @@
 # Minecraft dynamic circle generator
 
-### The links (les liens pour le générateur)
+### The link (le lien pour le générateur)
 
 Minecraft dynamic circle generator : https://kiwihub-br.github.io/mc-circle-generator/<br/>
 
