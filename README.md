@@ -2,7 +2,7 @@
 
 ### The link (le lien pour le générateur)
 
-Minecraft dynamic circle generator : https://kiwihub-br.github.io/mc-circle-generator/<br/>
+Minecraft dynamic circle generator : https://kiwihub-br.github.io/Minecraft-dynamic-circle-generator/<br/>
 
 ### How to use it ? (Comment l'utliser ?)
 
