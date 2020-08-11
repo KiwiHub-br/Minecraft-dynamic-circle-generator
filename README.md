@@ -1,9 +1,8 @@
-# mc-circle-generator (Minecraft-circle-generator)
+# mc-circle-generator (Minecraft-dynamic-circle-generator)
 
 ### The links (les liens pour le générateur)
 
-Lien pour le générateur de cercles pixelisés : https://kiwihub-br.github.io/mc-circle-generator/<br/>
-Link to the circle generator : https://kiwihub-br.github.io/mc-circle-generator/
+Minecraft dynamic circle generator : https://kiwihub-br.github.io/mc-circle-generator/<br/>
 
 ### How to use it ? (Comment l'utliser ?)
 
