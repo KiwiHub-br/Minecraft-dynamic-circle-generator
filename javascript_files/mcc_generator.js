@@ -2,7 +2,7 @@
 ------------------------------------------------------------
                           CREDITS
   
-  Programme créer de zéro par @briec repl.it 
+  Programme créer par @briec repl.it 
   (dernière mise à jour : 11/08/2020)
   (last update : 08-11-2020)
 
@@ -40,16 +40,13 @@ function dessin_setPixel(x,y){
 
 //fonction pour le tracé du quadrillage
 function quadrillage(r,opacite){
-	var grid_size = 10*r+5;
+    var grid_size = 10*r+5;
 
     for (var x = 0; x <= grid_size; x += 5) {
         context.moveTo(0.5 + x, 0);
         context.lineTo(0.5 + x, grid_size);
-    }
-
-    for (var y = 0; y <= grid_size; y += 5) {
-        context.moveTo(0, 0.5 + y);
-        context.lineTo(grid_size, 0.5 + y);
+        context.moveTo(0, 0.5 + x);
+        context.lineTo(grid_size, 0.5 + x);
     }
     context.strokeStyle = "rgba(0, 0, 0, "+opacite+")";
     context.stroke();
