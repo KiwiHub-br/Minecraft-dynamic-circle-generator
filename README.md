@@ -26,4 +26,4 @@ Some tools are at your disposal to change the shape or to zoom... (Des outils so
 
 ### License & copyright
 
-Licensed under the [MIT Lisence](LICENSE).
+Licensed under the [MIT License](LICENSE).
